@@ -1,6 +1,9 @@
+//A function call a function as a arguments is called a CallBack function.
+
 function calculate(num1,num2, Operator){
     return Operator(num1,num2);
 }
+
 const addition= (num1,num2)=>{
     return num1+num2;
 }

@@ -5,9 +5,54 @@ const priority = (operator) => {
     return 0;
 }
 
+function isValidExpression(expression) {
+    let stack =[];
+    for(let i=0;i<expression.length;i++){
+        if(expression[i]==='('){
+            stack.push(i);
+            if(i===expression.length-1){
+                return false;
+            }
+            else if(expression[i+1]==="+" || expression[i+1]==="*" || expression[i+1]==="/"){
+                return false;
+            }
+            
+        }
+        else if(expression[i]===')'){
+            stack.pop();
+            if(i===0){
+                return false;
+            }
+            else if(expression[i-1]==="+" || expression[i-1]==="-" || expression[i-1]==="*" || expression[i-1]==="/"){
+                return false;
+            }
+        }
+        else if(expression[i]==="+" || expression[i]==="-" || expression[i]==="*" || expression[i]==="/"){
+            if(i==0 || i==expression.length-1){
+                return false;
+            }
+            else if(expression[i-1]==="+" || expression[i-1]==="-" || expression[i-1]==="*" || expression[i-1]==="/"){
+                return false;
+            }
+            else if(expression[i+1]==="+" || expression[i+1]==="-" || expression[i+1]==="*" || expression[i+1]==="/"){
+                return false;
+            }
+
+        }
+
+    }
+    return true;
+}
+
 //Solve Expression
 const evalution = (expression) => {
-    //Stroe symbols
+    if(!isValidExpression(expression)){
+        return ("Invalid Expression");
+
+    }
+
+
+    //Store symbols
     const symbols = [];
     //store numbers
     const number = [];
@@ -86,6 +131,15 @@ const calculations = (operations1, operations2, operator) => {
 }
 
 // required 
-const expression = '1+ (7+(2+5))';
+const expression = '1+(2+3 )*4-10/2';
 const result = evalution(expression);
 console.log(result);
+
+
+{
+    const obj = {};
+const proto = Object.getPrototypeOf(obj);
+
+console.log(proto );  // Output: true
+
+}

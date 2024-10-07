@@ -12,3 +12,6 @@ function division(...numbers) {
 }
 
 console.log(addition(9,4,5,2,52,3));
+console.log(subtraction(9,4,5,2,52,3));
+console.log(multiplication(9,4,5,2,52,3));
+console.log(division(9,4,5,2,52,3));

@@ -16,3 +16,21 @@ const division = (a,b)=>{
 const modulos = (a,b)=>{
     return a%b;
 }
+
+
+
+{
+    const object1 = {};
+
+Object.defineProperties(object1, {
+  property1: {
+    name: "ABhinav",
+    value: "j",
+  },
+  property2: {},
+});
+
+console.log(object1.property1.name);
+// Expected output: 42
+
+}
