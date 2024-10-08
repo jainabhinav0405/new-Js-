@@ -71,3 +71,4 @@ function manageCompany(Json, type, dept , employe=null){
     }
 }
 
+

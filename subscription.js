@@ -222,6 +222,4 @@ function derived(subscription, routes){
 
 let Json = base(subscription,routes);
 
-for(let element of Json){
-    console.log(JSON.stringify(element));
-}
+console.log(JSON.stringify(Json,null, 2))
